@@ -1,13 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../../../redux/store";
-import { Text, TouchableOpacity, View } from "react-native";
-import { decrement, increment } from "./counterSlice";
+import { TouchableOpacity, View } from "react-native";
+import { decrement, increment } from "@/app/features/counter/counterSlice";
 import { ThemedText } from "@/components/ThemedText";
-import { useAppSelector, useAppDispatch } from "../../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
-export function Counter() {
+export default function Counter() {
   const count = useAppSelector((state) => state.counter.value);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <View>
